@@ -30,16 +30,16 @@ function draw() {
 
 }
 
-function mousePressed() {
-
-	while (ypos > height/2){
-
-	}
-
-}
+// function mousePressed() {
+//
+// 	while (ypos > height/2){
+//
+// 	}
+//
+// }
 
 function updateYPos(){
-	// ypos--;
+
 }
 
 Tone.Transport.scheduleRepeat(function(time){
