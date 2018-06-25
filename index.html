@@ -12,6 +12,8 @@
     <h1>Metronome</h1>
     <button onclick="play()">Play</button>
     <button onclick="stop()">Stop</button>
-    <input id="tempo" type="range" min="30.0" max="160.0" step="1" value="120" style="height: 20px; width: 200px" onInput="tempo = event.target.value; document.getElementById('showTempo').innerText=tempo;">
+    <input id="tempo" type="range" min="30.0" max="210.0" step="1" value="120" style="height: 20px; width: 200px" onchange="setTempo(this.value)" onInput="setTempo(this.value)">
+    <input id="tempoText" type="number" value="120" max="210" min="30" onchange="setTempo(this.value)" oninput="setTempo(this.value)">
+    <div id="flashBox"></div>
   </body>
 </html>
