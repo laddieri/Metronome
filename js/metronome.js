@@ -7,6 +7,40 @@ var tempo = 120;
 var colors = ["red", "orange", "blue", "green"]
 var x=0;
 var tempoTextVar = document.getElementById("tempoText")
+var xpos=0;
+var ypos=0;
+var ydirection=-1;
+var rad=40;
+var moving=0;
+function setup() {
+  createCanvas(640, 480);
+	ellipseMode(RADIUS);
+	xpos=width/2;
+	ypos=height-rad;
+}
+
+function draw() {
+	background(100);
+  ellipse(xpos, ypos, rad, rad);
+
+	// ypos--;
+	// ypos = ypos-(ypos*moving);
+
+	updateYPos();
+
+}
+
+function mousePressed() {
+
+	while (ypos > height/2){
+
+	}
+
+}
+
+function updateYPos(){
+	// ypos--;
+}
 
 Tone.Transport.scheduleRepeat(function(time){
 	synth.triggerAttackRelease("C4", "8n");
