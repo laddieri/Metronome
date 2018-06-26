@@ -7,14 +7,14 @@
     <link rel="stylesheet" href="css/main.css">
     <script src="js/Tone.js"></script>
     <script src="js/p5.min.js"></script>
-    <script src="js/metronome.js"></script>
   </head>
   <body>
     <h1>Metronome</h1>
     <button onclick="play()">Play</button>
     <button onclick="stop()">Stop</button>
-    <input id="tempo" type="range" min="30.0" max="210.0" step="1" value="120" style="height: 20px; width: 200px" onchange="setTempo(this.value)" onInput="setTempo(this.value)">
-    <input id="tempoText" type="number" value="120" max="210" min="30" onchange="setTempo(this.value)" oninput="setTempo(this.value)">
+    <input id="tempoSlider" type="range" min="30.0" max="210.0" step="1" value="120" style="height: 20px; width: 200px">
+    <input id="tempoText" type="number" value="120" max="210" min="30">
     <!-- <div id="flashBox"></div> -->
   </body>
+  <script src="js/metronome.js"></script>
 </html>
