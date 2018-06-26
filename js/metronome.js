@@ -14,7 +14,7 @@ var ydirection=-1;
 var rad=40;
 var moving=0;
 var animating=false;
-var t = 0;
+var t = 1;
 function setup() {
   createCanvas(640, 380);
   ellipseMode(RADIUS);
@@ -29,18 +29,29 @@ function draw() {
   // ypos--;
   // ypos = ypos-(ypos*moving);
 
+  // if (animating){
+  //   if (ypos < height-(350-tempo) || ypos > height-rad){
+  //     ydirection=ydirection*-1;
+  //   }
+  //
+  //
+  //     ypos=ypos+ydirection*20;
+  //   if (ypos > height-rad){
+  //     animating=false;
+  //   }
+  //
+  // }
   if (animating){
-    if (ypos < height-(350-tempo) || ypos > height-rad){
-      ydirection=ydirection*-1;
-    }
-
-
-      ypos=ypos+ydirection*20;
-    if (ypos > height-rad){
-      animating=false;
-    }
-
+  updateYPos(t);
+  t++;
   }
+}
+
+function updateYPos(time){
+
+  ypos = height-rad - (-.3*t*t + 10*t);
+
+
 }
 
 // function mousePressed() {
@@ -61,7 +72,7 @@ Tone.Transport.scheduleRepeat(function(time){
     // }
 
     animating=true;
-    ;
+    t=0;
 
   }, time);
 }, "4n");
