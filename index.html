@@ -9,12 +9,14 @@
     <script src="js/p5.min.js"></script>
   </head>
   <body>
+    <div id="controls">
     <h1>Metronome</h1>
     <button onclick="play()">Play</button>
     <button onclick="stop()">Stop</button>
     <input id="tempoSlider" type="range" min="30.0" max="210.0" step="1" value="120" style="height: 20px; width: 200px">
     <input id="tempoText" type="number" value="120" max="210" min="30">
     <!-- <div id="flashBox"></div> -->
+  </div>
   </body>
   <script src="js/metronome.js"></script>
 </html>

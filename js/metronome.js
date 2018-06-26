@@ -12,22 +12,26 @@ var ypos=0;
 var vdirection=-1;
 var ydirection=-1;
 var moving=0;
-var ballRatio=3;
+var ballRatio=10;
+var screenRatio = 4/3;
 var rad;
 var animating=false;
 var t = 1;
 function setup() {
-  calculateBallSize(height);
   createCanvas(windowWidth/windowCanvasRatio, windowHeight/windowCanvasRatio);
+  calculateBallSize(height);
+  console.log(height);
   noStroke();
   ellipseMode(RADIUS);
   xpos=width/2;
   ypos=height-rad;
 }
 function windowResized() {
+  console.log(height);
   resizeCanvas(windowWidth/windowCanvasRatio, windowHeight/windowCanvasRatio);
   calculateBallSize(height);
   xpos = width/2;
+  ypos=height-rad;
 }
 
 function calculateBallSize (heightInput) {
