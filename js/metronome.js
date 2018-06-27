@@ -6,6 +6,7 @@ var tempo = 120;
 
 var colors = ["red", "orange", "blue", "green"]
 var windowCanvasRatio =1.75;
+var fr=60;
 var x=0;
 var xpos=0;
 var ypos=0;
@@ -20,7 +21,7 @@ var t = 1;
 function setup() {
   createCanvas(windowWidth/windowCanvasRatio, windowHeight/windowCanvasRatio);
   calculateBallSize(height);
-  console.log(height);
+  frameRate(fr)
   noStroke();
   ellipseMode(RADIUS);
   xpos=width/2;
@@ -49,8 +50,8 @@ function draw() {
 }
 
 function updateYPos(time){
-
-  ypos = height-rad - (-.3*t*t + 10*t);
+  ypos = height-rad - (-tempo/3000*time*time + tempo/40*time);
+  console.log(ypos);
 
 
 }
@@ -79,6 +80,7 @@ function play() {
 
 function stop() {
   Tone.Transport.stop();
+  animating=false;
 }
 
 function updateTempo (tempoInput) {
