@@ -18,6 +18,9 @@ var screenRatio = 4/3;
 var rad;
 var animating=false;
 var t = 1;
+var h = 250;
+var k = 90;
+var a= -4*k / Math.pow(h*2,2);
 function setup() {
   createCanvas(windowWidth/windowCanvasRatio, windowHeight/windowCanvasRatio);
   calculateBallSize(height);
@@ -41,7 +44,7 @@ function calculateBallSize (heightInput) {
 
 function draw() {
   background(255, 204, 0);
-  ellipse(xpos, ypos, rad, rad);
+  ellipse(xpos, height-ypos, rad, rad);
 
   if (animating){
     updateYPos(t);
@@ -50,9 +53,9 @@ function draw() {
 }
 
 function updateYPos(time){
-  ypos = height-rad - (-tempo/3000*time*time + tempo/40*time);
+  // ypos = height-rad - (-tempo/3000*time*time + tempo/40*time);
+  ypos = a * Math.pow(((time + h) % (h * 2) - h), 2) + k;
   console.log(ypos);
-
 
 }
 
